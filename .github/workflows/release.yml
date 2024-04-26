@@ -1,0 +1,18 @@
+name: Get Version Number on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract Version Number
+        id: extract_version
+        run: echo "::set-output name=version::${{ github.event.release.tag_name }}"
+
+      - name: Display Version Number
+        run: |
+          echo "The released version is ${{ steps.extract_version.outputs.version }}"
+          echo "Repository URL: https://github.com/${{ github.repository }}"
