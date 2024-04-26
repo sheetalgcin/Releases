@@ -15,4 +15,3 @@ jobs:
       - name: Display Version Number
         run: |
           echo "The released version is ${{ steps.extract_version.outputs.version }}"
-          echo "Repository URL: https://github.com/${{ github.repository }}"
