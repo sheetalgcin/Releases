@@ -1,6 +1,7 @@
 import os
 import datetime
-events = {"date": "", "component": "", "type": "", "tenant_id": "","version": ""}
+annotations = {"events" : [{"date": "", "component": "", "type": "", "tenant_id": "","version": ""}],"v": 1}
+
 # Access environment variables
 release = os.environ.get('RELEASE_TAG')
 dateInfo = os.environ.get('RELEASE_DATE')
@@ -20,7 +21,8 @@ events["type"]  = "release"
 events["tenant_id"] = 1
 events["version"] = str(release)
 
-print(events.append("v":1))
+print(events)
+print(annotations["events"].append(events))
 
 # Print the result
 print(epoch_time)
