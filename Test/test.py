@@ -23,4 +23,4 @@ events["version"] = str(release)
 print(events)
 
 # Print the result
- print(epoch_time)
+print(epoch_time)
