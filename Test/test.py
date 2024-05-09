@@ -15,13 +15,13 @@ datetime_obj = datetime.datetime.fromisoformat(dateInfo)
 # Convert datetime object to Unix epoch time
 epoch_time = int(datetime_obj.timestamp())
 
-events["date"] = int(epoch_time)
-events["component"] = "zolagus"
-events["type"]  = "release"
-events["tenant_id"] = 1
-events["version"] = str(release)
+event["date"] = int(epoch_time)
+event["component"] = "zolagus"
+event["type"]  = "release"
+event["tenant_id"] = 1
+event["version"] = str(release)
 
-print(events)
+print(event)
 print(annotations["events"].append(event))
 
 # Print the result
