@@ -11,6 +11,9 @@ jobs:
       RELEASE_TAG: ${{ github.event.release.tag_name }}
       RELEASE_DATE: ${{ github.event.release.published_at }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: Print Release Details
         run: |
            echo "export RELEASE_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
