@@ -1,7 +1,7 @@
 import os
 import datetime
-annotations = {"events" : [{}],"v": 1}
-event = [{"date": None, "component": "", "type": "", "tenant_id": "","version": ""}]
+annotations = {"events" : {},"v": 1}
+event = {"date": None, "component": "", "type": "", "tenant_id": "","version": ""}
 # Access environment variables
 release = os.environ.get('RELEASE_TAG')
 dateInfo = os.environ.get('RELEASE_DATE')
