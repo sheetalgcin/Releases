@@ -22,5 +22,6 @@ jobs:
           python-version: '3.x'
           
       - name: Run Python script
-        run: 
+        run:
+          chmod a+x Test/test.py
           python3 Test/test.py
