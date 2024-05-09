@@ -20,7 +20,7 @@ events["type"]  = "release"
 events["tenant_id"] = 1
 events["version"] = str(release)
 
-print(events)
+print(events.append("v":1))
 
 # Print the result
 print(epoch_time)
