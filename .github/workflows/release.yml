@@ -22,4 +22,7 @@ jobs:
           python-version: '3.x'
           
       - name: Run Python script
-        run: python3 Test/test.py
+        run: 
+          ls -l
+          pwd
+          python3 Test/test.py
