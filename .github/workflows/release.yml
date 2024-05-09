@@ -17,4 +17,4 @@ jobs:
            echo "export RELEASE_DATE=${{ github.event.release.published_at }}" >> $GITHUB_ENV
       
       - name: Run Python script
-        run: python test.py
+        run: python3 test.py
