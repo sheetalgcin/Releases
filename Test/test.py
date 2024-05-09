@@ -1,11 +1,17 @@
 import os
 
 # Access environment variables
-timestamp_seconds = os.environ.get('RELEASE_TAG')
-iso8601_timestamp = os.environ.get('RELEASE_DATE')
+release = os.environ.get('RELEASE_TAG')
+dateInfo = os.environ.get('RELEASE_DATE')
 
 # Print or use the values as needed
-print("Timestamp seconds:", timestamp_seconds)
-print("ISO8601 timestamp:", iso8601_timestamp)
+print(f'Release Info: {release}')
+print(f'dateInfo: {dateInfo}')
 
+datetime_obj = datetime.datetime.fromisoformat(dateInfo)
 
+# Convert datetime object to Unix epoch time
+epoch_time = int(datetime_obj.timestamp())
+
+# Print the result
+print(epoch_time)
