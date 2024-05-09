@@ -1,17 +1,15 @@
 import os
 import datetime
+import json
+import requests
+
+url = "http://events.test.lt/lt_ant"
 annotations = {"events" : {},"v": 1}
 event = {"date": None, "component": "", "type": "", "tenant_id": "","version": ""}
 # Access environment variables
 release = os.environ.get('RELEASE_TAG')
 dateInfo = os.environ.get('RELEASE_DATE')
-
-# Print or use the values as needed
-print(f'Release Info: {release}')
-print(f'dateInfo: {dateInfo}')
-
 datetime_obj = datetime.datetime.fromisoformat(dateInfo)
-
 # Convert datetime object to Unix epoch time
 epoch_time = int(datetime_obj.timestamp())
 
@@ -20,9 +18,13 @@ event["component"] = "zolagus"
 event["type"]  = "release"
 event["tenant_id"] = 1
 event["version"] = str(release)
-
-print(event)
 annotations["events"]= event
 
-# Print the result
-print(annotations)
+reponse = requests.post(url, json=annotations)
+
+if response.status_code == 200:
+        print("Data sent successfully to the endpoint.")
+else:
+  print("Failed to send data. Status code:", response.status_code)
+
+
