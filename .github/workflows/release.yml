@@ -7,8 +7,12 @@ on:
 jobs:
   print_release_details:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name }}
+      RELEASE_DATE: ${{ github.event.release.published_at }}
     steps:
       - name: Print Release Details
         run: |
-          echo "Tag Name: ${{ github.event.release.tag_name }}"
-          echo "Published At: ${{ github.event.release.published_at }}"
+           echo "export RELEASE_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+           echo "export RELEASE_DATE=${{ github.event.release.published_at }}" >> $GITHUB_ENV
+
