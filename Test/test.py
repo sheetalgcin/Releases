@@ -22,7 +22,7 @@ event["tenant_id"] = 1
 event["version"] = str(release)
 
 print(event)
-print(annotations["events"].append(event))
+annotations["events"]= event
 
 # Print the result
 print(epoch_time)
