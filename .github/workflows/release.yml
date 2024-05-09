@@ -27,5 +27,4 @@ jobs:
       - name: Run Python script
         working-directory: Test
         run:
-          python3 --version
           python3 test.py
