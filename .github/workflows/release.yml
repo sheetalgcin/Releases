@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Print Release Details
+        if: startsWith(github.event.release.tag_name, 'release/services/' ) 
         run: |
            echo "export RELEASE_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
            echo "export RELEASE_DATE=${{ github.event.release.published_at }}" >> $GITHUB_ENV
